@@ -82,6 +82,7 @@ public class AuthController {
                signUpRequest.getPhoneNumber() , 
                signUpRequest.getCountry());
 
+    
     Set<String> strRoles = signUpRequest.getRole();  // Ce qu'on récupère du Request
     
     Set<Role> roles = new HashSet<>(); // ce qu'on doit créer et sauvegarder dans la base pour chaque User
@@ -115,6 +116,7 @@ public class AuthController {
 
     user.setRoles(roles);
     userRepository.save(user);
+    
 
     return ResponseEntity.ok(new MessageResponse("Inscription avec succès!"));
   }

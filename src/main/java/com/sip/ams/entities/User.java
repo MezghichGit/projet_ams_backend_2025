@@ -77,6 +77,17 @@ public class User {
 	public void setCountry(String country) {
 		this.country = country;
 	}
+	
+	
+
+	@Override
+	public String toString() {
+		return "User [username=" + username + ", email=" + email + ", password=" + password
+				+ ", firstName=" + firstName + ", lastName=" + lastName + ", companyName=" + companyName
+				+ ", phoneNumber=" + phoneNumber + ", country=" + country + ", roles=" + roles + "]";
+	}
+
+
 
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
